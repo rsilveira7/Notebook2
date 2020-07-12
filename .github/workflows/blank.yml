@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: awact/s3-action@master
       with:
-        args: --acl public-read --follow-symlinks --delete
+        args: --acl public-read --follow-symlinks --delete --exclude '.git/*'  --exclude '.github/*'
       env:
         SOURCE_DIR: './'
         AWS_REGION: 'us-east-1'
